@@ -68,17 +68,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `MastCellHope`,
-        short_name: `MCH`,
-        start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#023967`,
-        display: `standalone`,
-      },
-    },
-    {
       resolve: 'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
       options: {
         develop: true, // Activates purging in npm run develop
