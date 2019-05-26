@@ -8,12 +8,17 @@ import useSiteMetadata from './SiteMetadata'
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata()
   return (
-    <div>
-      <Helmet>
+    <div className="template-wrap">
+      <Helmet
+        bodyAttributes={{
+          class: 'has-navbar-fixed-top'
+        }}
+      >
         <html lang="en" />
         <title>{title}</title>
         <meta name="description" content={description} />
 
+        <link href="https://fonts.googleapis.com/css?family=Aleo:400,700" rel="stylesheet"></link>
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -45,7 +50,7 @@ const TemplateWrapper = ({ children }) => {
         <meta property="og:image" content="/img/og-image.jpg" />
       </Helmet>
       <Navbar />
-      <div>{children}</div>
+      <div className="page-wrap">{children}</div>
       <Footer />
     </div>
   )

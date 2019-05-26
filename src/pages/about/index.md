@@ -1,19 +1,24 @@
 ---
 templateKey: 'about-page'
 path: /about
-title: About our values
+title: About Mast Cell Hope
 ---
-### Shade-grown coffee
-Coffee is a small tree or shrub that grows in the forest understory in its wild form, and traditionally was grown commercially under other trees that provided shade. The forest-like structure of shade coffee farms provides habitat for a great number of migratory and resident species.
+Mast Cell Hope was built out of a desire to improve the suffering of mast cell patients. We need better treatments and a cure.
 
-### Single origin
-Single-origin coffee is coffee grown within a single known geographic origin. Sometimes, this is a single farm or a specific collection of beans from a single country. The name of the coffee is then usually the place it was grown to whatever degree available.
+We are a non-profit, all volunteer organization. We are driven by our mission and most of us have been in the mast cell community for over twenty years. We understand the devastating toll this disease takes on families and we want to end that.
 
-### Sustainable farming
-Sustainable agriculture is farming in sustainable ways based on an understanding of ecosystem services, the study of relationships between organisms and their environment. What grows where and how it is grown are a matter of choice and careful consideration for nature and communities.
+We have lofty goals and big ideas. We are an action oriented group and we hope that you will join us.
 
-### Direct sourcing
-Direct trade is a form of sourcing practiced by some coffee roasters. Advocates of direct trade practices promote direct communication and price negotiation between buyer and farmer, along with systems that encourage and incentivize quality.
+### Achieving Goals
+Research is the way to achieve our goals and that takes a lot of funding.
+We strive to follow up on current research, create a genome study and be at the forefront of future research around the world.
 
-### Reinvest profits
-We want to truly empower the communities that bring amazing coffee to you. That’s why we reinvest 20% of our profits into farms, local businesses and schools everywhere our coffee is grown. You can see the communities grow and learn more about coffee farming on our blog.
+### Helping Through Education
+Unfortunately, our diseases are rare and difficult to diagnose. Our educational goal is to offer continuing education courses for Emergency Department staff and General Practitioners.  Our long term goal is to offer educational training to all medical professionals.
+
+### Organizational Structure
+#### Board of Directors:
+Bonnie Sica, President
+Celeste Finnerty PhD, Vice President
+Davita Greenwald
+Marilyn Huntley, RN

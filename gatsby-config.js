@@ -2,9 +2,9 @@ var proxy = require('http-proxy-middleware')
 
 module.exports = {
   siteMetadata: {
-    title: 'MCH Test',
+    title: 'Mast Cell Hope, Inc.',
     description:
-      'Sample site for MCH',
+      'The Mission of Mast Cell Hope, Inc. is to advance research to find new treatments and ultimately cures for Mast Cell Diseases and to educate care providers on treating Mast Cell Disease. We will advance frontline research into exploration of new ideas underlying the root cause of mast cell diseases. Our goal is to help patients by encouraging physicians, nurses and staff to understand Mast Cell Diseases, and to support researchers in identifying new treatment modalities.',
   },
   plugins: [
     'gatsby-plugin-react-helmet',

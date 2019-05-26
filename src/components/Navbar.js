@@ -34,7 +34,7 @@ const Navbar = class extends React.Component {
   render() {
     return (
       <nav
-        className="navbar is-transparent"
+        className="navbar is-fixed-top"
         role="navigation"
         aria-label="main-navigation"
       >
@@ -49,9 +49,9 @@ const Navbar = class extends React.Component {
               data-target="navMenu"
               onClick={() => this.toggleHamburger()}
             >
-              <span />
-              <span />
-              <span />
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
             </div>
           </div>
           <div
@@ -62,17 +62,20 @@ const Navbar = class extends React.Component {
               <Link className="navbar-item" to="/about">
                 About
               </Link>
-              <Link className="navbar-item" to="/products">
+              <Link className="navbar-item" to="/projects">
                 Projects
               </Link>
-              <Link className="navbar-item" to="/blog">
-                News
+              <Link className="navbar-item" to="/products">
+                Education
               </Link>
               <Link className="navbar-item" to="/contact">
-                Contact
+                Volunteer
               </Link>
               <Link className="navbar-item" to="/contact/examples">
                 Membership
+              </Link>
+              <Link className="navbar-item" to="/contact/examples">
+                <button className="button is-secondary is-outlined">Donate</button>
               </Link>
             </div>
           </div>
