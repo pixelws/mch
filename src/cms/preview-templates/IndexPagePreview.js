@@ -13,7 +13,10 @@ const IndexPagePreview = ({ entry, getAsset }) => {
         title={entry.getIn(['data', 'title'])}
         heading={entry.getIn(['data', 'heading'])}
         subheading={entry.getIn(['data', 'subheading'])}
-        mission={entry.getIn(['data', 'mission'])}
+        mission={{
+          title: entry.getIn(['data', 'mission', 'title']),
+          statement: entry.getIn(['data', 'mission', 'statement']),
+        }}
         medicalConditions={{
           heading: entry.getIn(['data', 'medicalConditions', 'heading']),
           diseases: diseases,
