@@ -13,6 +13,7 @@ export const IndexPageTemplate = ({
   subheading,
   mission,
   medicalConditions,
+  projects,
 }) => (
   <div className="home-page-wrap">
     <div
@@ -38,7 +39,7 @@ export const IndexPageTemplate = ({
         <div className="columns">
           <div className="column is-10 is-offset-1">
             <div className="content">
-              <h2 className="title has-text-centered has-text-white is-uppercase is-size-5-mobile is-size-3-desktop">{mission.title}</h2>
+              <h2 className="title has-text-centered has-text-white is-uppercase is-size-3 is-size-5-mobile">{mission.title}</h2>
               <span className="is-size-6-mobile is-size-5">{mission.statement}</span>
             </div>
           </div>
@@ -64,7 +65,7 @@ export const IndexPageTemplate = ({
       <div className="columns">
         <div className="column is-10 is-offset-1">
           <div className="content">
-            <h2 className="title has-text-centered has-text-white is-size-5-mobile is-size-3" style={{ marginBottom: '3rem' }}>WELCOME MESSAGE FROM THE PRESIDENT</h2>
+            <h2 className="title has-text-centered has-text-white is-size-3 is-size-5-mobile" style={{ marginBottom: '3rem' }}>WELCOME MESSAGE FROM THE PRESIDENT</h2>
           </div>
         </div>
       </div>
@@ -81,8 +82,8 @@ export const IndexPageTemplate = ({
       <div className="columns">
         <div className="column is-10 is-offset-1">
           <div className="content">
-            <h2 className="title has-text-centered has-text-primary is-size-5-mobile is-size-4-tablet is-size-3-desktop">
-              LATEST PROJECTS
+            <h2 className="title has-text-centered has-text-primary is-size-3 is-size-5-mobile is-uppercase">
+              {projects}
             </h2>
             <ProjectRoll />
             <div className="has-text-centered" style={{ margin: '3rem 0 1rem'}}>
@@ -105,6 +106,7 @@ IndexPageTemplate.propTypes = {
   medicalConditions: PropTypes.shape({
     heading: PropTypes.string,
     diseases: PropTypes.array,
+  projects: PropTypes.string,
   }),
 }
 
@@ -119,6 +121,7 @@ const IndexPage = ({ data }) => {
         subheading={frontmatter.subheading}
         mission={frontmatter.mission}
         medicalConditions={frontmatter.medicalConditions}
+        projects={frontmatter.projects}
       />
     </Layout>
   )
@@ -151,6 +154,7 @@ export const pageQuery = graphql`
             name
           }
         }
+        projects
       }
     }
   }
