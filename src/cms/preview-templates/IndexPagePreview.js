@@ -21,6 +21,7 @@ const IndexPagePreview = ({ entry, getAsset }) => {
           heading: entry.getIn(['data', 'medicalConditions', 'heading']),
           diseases: diseases,
         }}
+        projects={entry.getIn(['data', 'projects'])}
       />
     )
   } else {
