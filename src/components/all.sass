@@ -4,11 +4,14 @@
 
 $primary: #023967
 $primary-invert: #fff
+$primary-light: lighten($primary, 15%)
 $secondary: #871638
 $secondary-invert: #fff
+$secondary-light: lighten($secondary, 15%)
 $body-color: #333
 $black: #000
 $blue: #024e8d
+$background: #fff
 
 // Lists and maps
 $custom-colors: ("secondary": ($secondary, $secondary-invert))
@@ -27,15 +30,68 @@ $link-focus-border: transparent
 $link-active: $secondary
 $link-active-border: transparent
 
+// Buttons
+$button-color: #fff
+$button-background-color: $secondary
+$button-border-color: $secondary
+$button-border-width: 2px
+$button-hover-color: $secondary
+$button-hover-background-color: transparent
+$button-hover-border-color: $secondary
+
+$button-focus-color: $white
+$button-focus-background-color: $primary
+$button-focus-border-color: $primary
+$button-focus-box-shadow-size: 0
+$button-focus-box-shadow-color: rgba($black, 0.15)
+
+// Navigation
+$navbar-height: 4.5rem
+$navbar-item-color: $grey-dark
+$navbar-item-hover-color: $secondary
+$navbar-item-hover-background-color: transparent
+$navbar-item-active-color: $secondary
+$navbar-item-active-background-color: transparent
+$navbar-item-img-max-height: 100%
+
+$navbar-burger-color: $primary
+
+//Menu overrides
+$menu-item-color: $grey-dark
+$menu-item-radius: $radius-small
+$menu-item-hover-color: $secondary
+$menu-item-hover-background-color: transparent
+$menu-item-active-color: $link
+$menu-item-active-background-color: transparent
+
+$menu-list-border-left: 1px solid $secondary
+
+$menu-label-color: $primary
+
 // Typography
+$content-heading-color: $primary
+$content-heading-weight: 700
+$content-heading-line-height: 1.25
+
 $family-secondary: 'Aleo', sans-serif
-.content
-  h1, h3, h4, h5
-    color: $primary !important
-  h2
-    color: $secondary
-h2
-  font-family: $family-secondary
+
+// Miscellaneous
+$radius: 0
+$radius-large: 0
+
+// Footer
+$footer-background-color: $grey-lighter
+$footer-padding: 3rem 1.5rem
+
+@import "~bulma"
+
+// ========================= Bulma overrides
+.button
+  font-weight: bold
+  &:hover
+    background-color: $button-hover-background-color
+  &:focus
+    background-color: $button-focus-background-color
 
 // Helper Classes
 .full-width-image-container
@@ -65,22 +121,39 @@ h2
   padding: 12px 16px
   font-size: 1rem
   line-height: 1.25
-  background-color: #fff
-  border-radius: .25rem
+  background-color: $secondary
+  border-radius: 0
   text-decoration: none
   font-weight: 700
-  color: #CC3700
+  color: $secondary-invert
   text-align: center
   -webkit-transition: all .15s ease
   transition: all .15s ease
+  &:hover
+    color: $primary-invert
+    background-color: $primary
 
 .margin-top-0
   margin-top: 0 !important
+.margin-bottom-0
+  margin-bottom: 0 !important
 
+
+// Navigation
 .navbar
   box-shadow: 0 0 10px rgba(0,0,0,0.1)
+.navbar-item,
+.navbar-link
+  text-transform: uppercase
+  letter-spacing: 1px
+  font-size: 0.875em
 .navbar-item .icon
   color: $secondary
+.navbar-brand
+  img, svg
+    width: auto
+    height: 50px
+
 // Override for use of svg's from https://simpleicons.org/
 .icon svg
   width: 1.5rem
@@ -88,26 +161,25 @@ h2
   fill: currentColor
 .navbar-brand .navbar-item.logo
   padding: 0 1rem
-footer.footer
-  padding: 3rem 0rem 0rem
-  background-color: transparent
 
-//Navbar overrides
-$navbar-item-color: #333
-$navbar-item-hover-color: $primary
-$navbar-item-hover-background-color: transparent
-$navbar-item-active-color: $secondary
-$navbar-item-active-background-color: transparent
-$navbar-item-img-max-height: 3rem
-
-//Menu overrides
-$menu-item-color: $white-ter
-$menu-item-hover-color: $black !important
-$menu-item-hover-background-color: $black
-$menu-item-active-color: $primary-invert
-$menu-item-active-background-color:	$primary-invert
-$menu-list-border-left: 1px solid $primary-invert
-$menu-label-color: $white-ter
+.navbar-burger
+  span
+    height: 2px
+    left: calc(50% - 12px)
+    width: 24px
+    &:nth-child(1)
+      top: calc(50% - 7px)
+    &:nth-child(2)
+      top: calc(50% - 1px)
+    &:nth-child(3)
+      top: calc(50% + 5px)
+  &.is-active
+    span:nth-child(1)
+      transform: translateY(6px) rotate(45deg)
+    span:nth-child(3)
+      transform: translateY(-6px) rotate(-45deg)
+  &:hover span
+    background-color: $secondary
 
 
 .menu-label
@@ -119,30 +191,95 @@ $menu-label-color: $white-ter
 .social
   padding: 2em
 .social a
-    padding: .5em .5em .3em .5em
-    border-radius: 1em
-    background-color: $white-ter
-    margin: .5em
-    width: 1em
-    height: 1em
-    vertical-align: middle
-    display: inline
+  padding: .5em .5em .3em .5em
+  border-radius: 1em
+  background-color: $white-ter
+  margin: .5em
+  width: 1em
+  height: 1em
+  vertical-align: middle
+  display: inline
+
+.content
+  h5, h6
+    color: #444
+  ul
+    list-style: square
+    margin: 0 2rem 2rem 0
+h1, h2, h3, h4, h5, h6
+  font-family: $family-secondary
+
+.section-hp
+  padding-top: 5rem
+  padding-bottom: 5rem
+footer.footer
+  .mch-logo
+    height: 60px
+    width: auto
+
+// ===== Component Styles =====
+// Page Header
+.pg-head
+  position: relative
+  width: 100vw
+  overflow: hidden
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: top center
+  &::before
+    content: ''
+    display: block
+    position: absolute
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+    background: linear-gradient(to bottom right, lighten($primary, 5%) 30%, $secondary)
+    opacity: 0.6
+  .container
+    height: 300px
+    display: block
+    text-align: center
+    //flex-flow: row nowrap
+    //align-items: center
+    //justify-content: center
+  .title-wrap
+    color: #fff
+    position: relative
+    display: inline-block
+    padding: 1.5rem 1rem
+    top: 40%
+    margin: 0 auto
+    &::before
+      content: ''
+      display: block
+      position: absolute
+      width: 150vw
+      height: 100%
+      top: 0
+      right: -3rem
+      background-color: rgba(lighten($secondary, 10%), 0.8)
+    > *
+      position: relative
 
 // project roll
 .project-item.is-featured
-  background-color: rgba($secondary,0.1)
+  background-color: rgba($primary-light,0.05)
 .project-item header
   display: flex
   margin-bottom: 1em
-.project-item .featured-thumbnail
-  flex-basis: 35%
-  margin: 0 1.5em 0 0
+.project-item.box
+  padding: 0
+.project-item .column.is-9
+  padding: 1.25rem
+.project-item .mch-logo
+  width: 75%
+  height: auto
+  opacity: 0.9
+  margin: auto
 
 
-@import "~bulma"
-
-
-// responsiveness
+// =========================== Responsiveness
 +tablet-only
   .project-item .featured-thumbnail
     flex-basis: 50%
@@ -154,3 +291,7 @@ $menu-label-color: $white-ter
     text-align: center
     max-width: 70%
     margin: 0 0 1em
+  .project-item .mch-logo
+    width: auto
+    height: 40px
+

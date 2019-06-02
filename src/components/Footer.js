@@ -1,113 +1,76 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import logo from '../img/logo.svg'
-import facebook from '../img/social/facebook.svg'
-import instagram from '../img/social/instagram.svg'
-import twitter from '../img/social/twitter.svg'
-import vimeo from '../img/social/vimeo.svg'
+import Logo from '../components/Logo'
 
 const Footer = class extends React.Component {
   render() {
     return (
-      <footer className="footer has-background-black has-text-white-ter">
-        <div className="content has-text-centered">
-          <img
-            src={logo}
-            alt="Kaldi"
-            style={{ width: '14em', height: '10em' }}
-          />
-        </div>
-        <div className="content has-text-centered has-background-black has-text-white-ter">
-          <div className="container has-background-black has-text-white-ter">
+      <div className="footer-wrap">
+        <footer className="footer has-text-grey-dark">
+          <div className="container">
             <div className="columns">
-              <div className="column is-4">
-                <section className="menu">
-                  <ul className="menu-list">
-                    <li>
-                      <Link to="/" className="navbar-item">
-                        Home
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/about">
-                        About
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/products">
-                        Products
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/contact/examples">
-                        Form Examples
-                      </Link>
-                    </li>
-                    <li>
-                      <a
-                        className="navbar-item"
-                        href="/admin/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Admin
-                      </a>
-                    </li>
-                  </ul>
-                </section>
+              <div className="column is-6 has-text-centered-mobile">
+                <Logo format="mono" color="#363636" />
+              </div>
+              <div className="column is-6 has-text-centered-mobile has-text-right">
+                <button class="button is-secondary is-outlined is-large">DONATE</button>
+              </div>
+            </div>
+
+            <div className="columns">
+              <div className="column is-4 has-text-centered-mobile">
+                <span className="title is-size-5" style={{ borderBottom: '2px solid #871638', margin: '0.5rem 0.75rem', padding: '0.25rem 0', display: 'inline-block' }}>DISCOVER MCH</span>
+                <ul className="menu-list">
+                  <li>
+                    <Link to="/" className="navbar-item has-text-centered-mobile">
+                      Home
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="navbar-item has-text-centered-mobile" to="/about">
+                      About Us
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="navbar-item has-text-centered-mobile" to="/projects">
+                      Projects
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="navbar-item has-text-centered-mobile" to="/contact/examples">
+                      Education
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              <div className="column is-4 has-text-centered-mobile">
+                <span className="title is-size-5" style={{ borderBottom: '2px solid #871638', margin: '0.5rem 0.75rem', padding: '0.25rem 0', display: 'inline-block' }}>GET INVOLVED</span>
+                <ul className="menu-list">
+                  <li>
+                    <Link className="navbar-item has-text-centered-mobile" to="/projects">
+                      Become A Member
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="navbar-item has-text-centered-mobile" to="/contact">
+                      Become A Volunteer
+                    </Link>
+                  </li>
+                </ul>
               </div>
               <div className="column is-4">
-                <section>
-                  <ul className="menu-list">
-                    <li>
-                      <Link className="navbar-item" to="/projects">
-                        Latest Projects
-                      </Link>
-                    </li>
-                    <li>
-                      <Link className="navbar-item" to="/contact">
-                        Contact
-                      </Link>
-                    </li>
-                  </ul>
-                </section>
-              </div>
-              <div className="column is-4 social">
-                <a title="facebook" href="https://facebook.com">
-                  <img
-                    src={facebook}
-                    alt="Facebook"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-                <a title="twitter" href="https://twitter.com">
-                  <img
-                    className="fas fa-lg"
-                    src={twitter}
-                    alt="Twitter"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-                <a title="instagram" href="https://instagram.com">
-                  <img
-                    src={instagram}
-                    alt="Instagram"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
-                <a title="vimeo" href="https://vimeo.com">
-                  <img
-                    src={vimeo}
-                    alt="Vimeo"
-                    style={{ width: '1em', height: '1em' }}
-                  />
-                </a>
+
               </div>
             </div>
           </div>
-        </div>
-      </footer>
+        </footer>
+        <footer className="has-background-grey-darker has-text-grey-lighter has-text-centered" style={{ padding: '0.75rem' }}>
+          <div className="container">
+            <p className="is-size-7">Copyright &copy; 2019 Mast Cell Hope, Inc. | All rights reserved</p>
+          </div>
+        </footer>
+      </div>
     )
   }
 }

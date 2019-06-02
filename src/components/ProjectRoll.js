@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
-import PreviewCompatibleImage from './PreviewCompatibleImage'
+import Logo from './Logo'
+import bg from '../img/bg-project-item.jpg'
 
 class ProjectRoll extends React.Component {
   render() {
@@ -9,49 +10,41 @@ class ProjectRoll extends React.Component {
     const { edges: posts } = data.allMarkdownRemark
 
     return (
-      <div className="columns is-multiline">
+      <div className="project-list">
         {posts &&
           posts.map(({ node: post }) => (
-            <div className="is-parent column is-12" key={post.id}>
-              <article
-                className={`project-item tile is-child box ${
-                  post.frontmatter.featuredpost ? 'is-featured' : ''
-                }`}
-              >
-                <header>
-                  {post.frontmatter.featuredimage ? (
-                    <div className="featured-thumbnail">
-                      <PreviewCompatibleImage
-                        imageInfo={{
-                          image: post.frontmatter.featuredimage,
-                          alt: `featured image thumbnail for post ${
-                            post.title
-                          }`,
-                        }}
-                      />
-                    </div>
-                  ) : null}
-                  <p className="post-meta">
+            <div 
+              key={post.id}
+              className={`project-item box ${
+                post.frontmatter.featuredpost ? 'is-featured' : ''
+              }`}
+            >
+              <div className="columns" style={{ margin: '0'}}>
+                <div className="column is-3 is-flex" style={{ backgroundImage: 'linear-gradient(to bottom right, rgba(151, 38, 72,0.7) 30%, rgba(2, 57, 103,0.7)), url(' + bg + ')', backgroundSize: 'cover' }}>
+                  <Logo format="square" color="#fff" />
+                </div>
+                <div className="column is-9">
+                  <h4 className="margin-bottom-0">
                     <Link
                       className="title has-text-primary is-size-4"
                       to={post.fields.slug}
                     >
                       {post.frontmatter.title}
                     </Link>
-                    <span className="subtitle is-size-5 is-block">
+                  </h4>
+                  <span className="subtitle is-size-6 is-block is-uppercase" style={{letterSpacing: '1px', marginTop: '5px' }}>
                       {post.frontmatter.date}
-                    </span>
+                  </span>
+                  <p>
+                    {post.excerpt}
+                    <br />
+                    <br />
+                    <Link className="button" to={post.fields.slug}>
+                      See Details →
+                    </Link>
                   </p>
-                </header>
-                <p>
-                  {post.excerpt}
-                  <br />
-                  <br />
-                  <Link className="button" to={post.fields.slug}>
-                    Keep Reading →
-                  </Link>
-                </p>
-              </article>
+                </div>
+              </div>
             </div>
           ))}
       </div>
@@ -74,10 +67,11 @@ export default () => (
         allMarkdownRemark(
           sort: { order: DESC, fields: [frontmatter___date] }
           filter: { frontmatter: { templateKey: { eq: "project" } } }
+          limit: 1
         ) {
           edges {
             node {
-              excerpt(pruneLength: 400)
+              excerpt(pruneLength: 200)
               id
               fields {
                 slug
@@ -87,13 +81,6 @@ export default () => (
                 templateKey
                 date(formatString: "MMMM DD, YYYY")
                 featuredpost
-                featuredimage {
-                  childImageSharp {
-                    fluid(maxWidth: 120, quality: 100) {
-                      ...GatsbyImageSharpFluid
-                    }
-                  }
-                }
               }
             }
           }

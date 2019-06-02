@@ -3,107 +3,85 @@ import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
-import Features from '../components/Features'
 import ProjectRoll from '../components/ProjectRoll'
+import bg from '../img/bg-home1.jpg'
 
 export const IndexPageTemplate = ({
-  image,
-  title,
   heading,
   subheading,
-  mainpitch,
-  description,
-  intro,
+  mission,
+  diseases,
 }) => (
-  <div>
+  <div className="page-wrap">
     <div
-      className="full-width-image margin-top-0"
-      style={{
-        backgroundImage: `url(${
-          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-        })`,
-        backgroundPosition: `top center`,
-        backgroundAttachment: `fixed`,
-      }}
-    >
-      <div
+        className="pg-head margin-top-0"
         style={{
-          display: 'flex',
-          height: '150px',
-          lineHeight: '1',
-          justifyContent: 'space-around',
-          alignItems: 'left',
-          flexDirection: 'column',
+            backgroundImage: 'url(' + bg + ')',
         }}
-      >
-        <h1
-          className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
-          style={{
-            backgroundColor: 'rgba(135, 22, 56,0.8)',
-            color: 'white',
-            lineHeight: '1',
-            padding: '0.25em',
-          }}
-        >
-          {title}
-        </h1>
-        <h3
-          className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
-          style={{
-            boxShadow:
-              'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
-            backgroundColor: 'rgb(255, 68, 0)',
-            color: 'white',
-            lineHeight: '1',
-            padding: '0.25em',
-          }}
-        >
-          {subheading}
-        </h3>
-      </div>
+    >
+        <div className="container">
+            <div className="title-wrap">
+                <h1
+                className="has-text-weight-bold is-size-4-mobile is-size-2-tablet is-size-1-desktop is-family-secondary"
+                >
+                {heading}
+                </h1>
+                <span className="is-size-6-mobile is-size-4-tablet is-size-4-desktop">{subheading}</span>
+            </div>
+        </div>
     </div>
-    <section className="section section--gradient">
+
+    <section className="section has-background-primary has-text-white">
       <div className="container">
-        <div className="section">
-          <div className="columns">
-            <div className="column is-10 is-offset-1">
-              <div className="content">
-                <div className="content">
-                  <div className="tile">
-                    <h1 className="title">{mainpitch.title}</h1>
-                  </div>
-                  <div className="tile">
-                    <h3 className="subtitle">{mainpitch.description}</h3>
-                  </div>
-                </div>
-                <div className="columns">
-                  <div className="column is-12">
-                    <h3 className="has-text-weight-semibold is-size-2">
-                      {heading}
-                    </h3>
-                    <p>{description}</p>
-                  </div>
-                </div>
-                <Features gridItems={intro.blurbs} />
-                <div className="columns">
-                  <div className="column is-12 has-text-centered">
-                    <Link className="btn" to="/products">
-                      See all products
-                    </Link>
-                  </div>
-                </div>
-                <div className="column is-12">
-                  <h3 className="has-text-weight-semibold is-size-2">
-                    Latest stories
-                  </h3>
-                  <ProjectRoll />
-                  <div className="column is-12 has-text-centered">
-                    <Link className="btn" to="/projects">
-                      Read more
-                    </Link>
-                  </div>
-                </div>
+        <div className="columns">
+          <div className="column is-10 is-offset-1">
+            <div className="content">
+              <h2 className="title has-text-centered has-text-white is-uppercase is-size-5-mobile is-size-3-desktop">{mission.title}</h2>
+              <span className="is-size-6-mobile is-size-5">{mission.statement}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section className="section section-hp">
+      <div className="columns">
+        <div className="column is-10 is-offset-1">
+          <div className="content">
+            <h2 className="title has-text-centered">{diseases.title}</h2>
+            <div className="columns">
+              <div className="column is-5">Image</div>
+              <div className="column is-7">
+                {diseases.list}
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section className="section has-background-secondary has-text-white">
+      <div className="columns">
+        <div className="column is-10 is-offset-1">
+          <div className="content">
+            <h2 className="title has-text-centered has-text-white is-size-5-mobile is-size-3" style={{ marginBottom: '3rem' }}>WELCOME MESSAGE FROM THE PRESIDENT</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div className="has-text-centered" style={{ marginTop: '-3rem' }}>
+      <div style={{ width: '480px', height: '300px', backgroundColor: '#444', margin: '0 auto' }}></div>
+    </div>
+    <section className="section section-hp">
+      <div className="columns">
+        <div className="column is-10 is-offset-1">
+          <div className="content">
+            <h2 className="title has-text-centered has-text-primary is-size-5-mobile is-size-4-tablet is-size-3-desktop">
+              LATEST PROJECTS
+            </h2>
+            <ProjectRoll />
+            <div className="has-text-centered" style={{ margin: '3rem 0 1rem'}}>
+              <Link className="btn" to="/projects">
+                See All Projects
+              </Link>
             </div>
           </div>
         </div>
@@ -113,15 +91,11 @@ export const IndexPageTemplate = ({
 )
 
 IndexPageTemplate.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   heading: PropTypes.string,
   subheading: PropTypes.string,
-  mainpitch: PropTypes.object,
-  description: PropTypes.string,
-  intro: PropTypes.shape({
-    blurbs: PropTypes.array,
-  }),
+  mission: PropTypes.object,
+  diseases: PropTypes.object,
 }
 
 const IndexPage = ({ data }) => {
@@ -130,13 +104,11 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <IndexPageTemplate
-        image={frontmatter.image}
         title={frontmatter.title}
         heading={frontmatter.heading}
         subheading={frontmatter.subheading}
-        mainpitch={frontmatter.mainpitch}
-        description={frontmatter.description}
-        intro={frontmatter.intro}
+        mission={frontmatter.mission}
+        diseases={frontmatter.diseases}
       />
     </Layout>
   )
@@ -157,33 +129,15 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         title
-        image {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
         heading
         subheading
-        mainpitch {
+        mission {
           title
-          description
+          statement
         }
-        description
-        intro {
-          blurbs {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            text
-          }
-          heading
-          description
+        diseases {
+          title
+          list
         }
       }
     }

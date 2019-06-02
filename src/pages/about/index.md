@@ -18,7 +18,7 @@ Unfortunately, our diseases are rare and difficult to diagnose. Our educational 
 
 ### Organizational Structure
 #### Board of Directors:
-Bonnie Sica, President
-Celeste Finnerty PhD, Vice President
-Davita Greenwald
-Marilyn Huntley, RN
+Bonnie Sica, President  
+Celeste Finnerty PhD, Vice President  
+Davita Greenwald  
+Marilyn Huntley, RN  

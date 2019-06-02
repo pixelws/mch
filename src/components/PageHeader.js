@@ -2,20 +2,19 @@ import React from "react"
 
 export default props => (
     <div
-        className="full-width-image-container margin-top-0"
+        className="pg-head margin-top-0"
         style={{
-            backgroundImage: `url({props.imgPath})`,
+            backgroundImage: 'url(' + props.imgPath + ')',
         }}
     >
-        <h1
-        className="has-text-weight-bold is-size-1"
-        style={{
-            color: 'white',
-            backgroundColor: 'rgba(135,22,56,0.8)',
-            padding: '1rem 2rem',
-        }}
-        >
-        {props.titleText}
-        </h1>
+        <div className="container">
+            <div className="title-wrap">
+                <h1
+                className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-desktop is-family-secondary"
+                >
+                {props.titleText}
+                </h1>
+            </div>
+        </div>
     </div>
 )

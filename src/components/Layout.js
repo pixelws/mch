@@ -50,7 +50,7 @@ const TemplateWrapper = ({ children }) => {
         <meta property="og:image" content="/img/og-image.jpg" />
       </Helmet>
       <Navbar />
-      <div className="page-wrap">{children}</div>
+      {children}
       <Footer />
     </div>
   )
