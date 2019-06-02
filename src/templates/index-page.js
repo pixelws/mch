@@ -20,7 +20,7 @@ export const IndexPageTemplate = ({
             backgroundImage: 'url(' + bg + ')',
         }}
     >
-        <div className="container">
+        <div className="container" style={{ height: '400px' }}>
             <div className="title-wrap">
                 <h1
                 className="has-text-weight-bold is-size-4-mobile is-size-2-tablet is-size-1-desktop is-family-secondary"
