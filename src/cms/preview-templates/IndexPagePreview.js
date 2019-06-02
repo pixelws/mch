@@ -4,15 +4,20 @@ import { IndexPageTemplate } from '../../templates/index-page'
 
 const IndexPagePreview = ({ entry, getAsset }) => {
   const data = entry.getIn(['data']).toJS()
+  const entryDiseases = entry.getIn(['data', 'medicalConditions', 'diseases'])
+  const diseases = entryDiseases ? entryDiseases.toJS() : []
 
   if (data) {
     return (
       <IndexPageTemplate
-        title={data.title}
-        heading={data.heading}
-        subheading={data.subheading}
-        mission={data.mission || {}}
-        diseases={data.diseases || {}}
+        title={entry.getIn(['data', 'title'])}
+        heading={entry.getIn(['data', 'heading'])}
+        subheading={entry.getIn(['data', 'subheading'])}
+        mission={entry.getIn(['data', 'mission'])}
+        medicalConditions={{
+          heading: entry.getIn(['data', 'medicalConditions', 'heading']),
+          diseases: diseases,
+        }}
       />
     )
   } else {

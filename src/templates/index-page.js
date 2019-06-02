@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
+import DiseaseList from '../components/DiseaseList'
 import ProjectRoll from '../components/ProjectRoll'
 import bg from '../img/bg-home1.jpg'
 import video from '../img/welcome_vid.mp4'
@@ -11,7 +12,7 @@ export const IndexPageTemplate = ({
   heading,
   subheading,
   mission,
-  diseases,
+  medicalConditions,
 }) => (
   <div className="home-page-wrap">
     <div
@@ -48,11 +49,11 @@ export const IndexPageTemplate = ({
       <div className="columns">
         <div className="column is-10 is-offset-1">
           <div className="content">
-            <h2 className="title has-text-centered">{diseases.title}</h2>
+            <h2 className="title has-text-centered">{medicalConditions.heading}</h2>
             <div className="columns">
               <div className="column is-5">Image</div>
               <div className="column is-7">
-                {diseases.list}
+                <DiseaseList data={medicalConditions.diseases} />
               </div>
             </div>
           </div>
@@ -101,7 +102,10 @@ IndexPageTemplate.propTypes = {
   heading: PropTypes.string,
   subheading: PropTypes.string,
   mission: PropTypes.object,
-  diseases: PropTypes.object,
+  medicalConditions: PropTypes.shape({
+    heading: PropTypes.string,
+    diseases: PropTypes.array,
+  }),
 }
 
 const IndexPage = ({ data }) => {
@@ -114,7 +118,7 @@ const IndexPage = ({ data }) => {
         heading={frontmatter.heading}
         subheading={frontmatter.subheading}
         mission={frontmatter.mission}
-        diseases={frontmatter.diseases}
+        medicalConditions={frontmatter.medicalConditions}
       />
     </Layout>
   )
@@ -141,9 +145,11 @@ export const pageQuery = graphql`
           title
           statement
         }
-        diseases {
-          title
-          list
+        medicalConditions {
+          heading
+          diseases {
+            name
+          }
         }
       }
     }

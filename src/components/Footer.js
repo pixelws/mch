@@ -34,7 +34,7 @@ const Footer = class extends React.Component {
                   </li>
                   <li>
                     <Link className="navbar-item has-text-centered-mobile" to="/projects">
-                      Projects
+                      Research
                     </Link>
                   </li>
                   <li>

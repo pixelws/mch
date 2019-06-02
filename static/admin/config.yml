@@ -31,7 +31,7 @@ collections:
           - {label: Heading, name: heading, widget: string}
           - {label: Subheading, name: subheading, widget: string}
           - {label: Mission, name: mission, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Statement, name: statement, widget: text}]}
-          - {label: Diseases, name: diseases, widget: object, fields: [{label: Title, name: title, widget: string}, {label: List, name: list, widget: text}]}
+          - {label: Medical Conditions, name: medicalConditions, widget: object, fields: [{label: Heading, name: heading, widget: string}, {label: Disease List, name: diseases, widget: list, fields: [{label: Name, name: name, widget: string}]}]}
       - file: "src/pages/about/index.md"
         label: "About"
         name: "about"
