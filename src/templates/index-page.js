@@ -13,7 +13,7 @@ export const IndexPageTemplate = ({
   mission,
   diseases,
 }) => (
-  <div className="page-wrap">
+  <div className="home-page-wrap">
     <div
         className="pg-head margin-top-0"
         style={{
