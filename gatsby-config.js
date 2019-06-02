@@ -62,6 +62,16 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-remark-video',
+      options: {
+        width: 480,
+        height: 'auto',
+        preload: 'auto',
+        muted: false,
+        autoplay: false
+      }
+    },
+    {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
         modulePath: `${__dirname}/src/cms/cms.js`,

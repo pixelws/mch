@@ -38,7 +38,7 @@ const Footer = class extends React.Component {
                     </Link>
                   </li>
                   <li>
-                    <Link className="navbar-item has-text-centered-mobile" to="/contact/examples">
+                    <Link className="navbar-item has-text-centered-mobile" to="/education">
                       Education
                     </Link>
                   </li>
@@ -48,12 +48,12 @@ const Footer = class extends React.Component {
                 <span className="title is-size-5" style={{ borderBottom: '2px solid #871638', margin: '0.5rem 0.75rem', padding: '0.25rem 0', display: 'inline-block' }}>GET INVOLVED</span>
                 <ul className="menu-list">
                   <li>
-                    <Link className="navbar-item has-text-centered-mobile" to="/projects">
+                    <Link className="navbar-item has-text-centered-mobile" to="/membership">
                       Become A Member
                     </Link>
                   </li>
                   <li>
-                    <Link className="navbar-item has-text-centered-mobile" to="/contact">
+                    <Link className="navbar-item has-text-centered-mobile" to="/volunteer">
                       Become A Volunteer
                     </Link>
                   </li>

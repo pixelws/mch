@@ -14,5 +14,5 @@ diseases:
     - Mastocytosis - Systemic, Indolent, Cutaneous, advanced variants  
     - Mast Cell Leukemia, Mast Cell Sarcoma  
     - Hereditary Alpha Tryptasemia  
-    - Mast Cell Activation Disease - MCAD
+    - Mast Cell Activation Disease - MCAD  
 ---

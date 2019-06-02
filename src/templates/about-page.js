@@ -10,16 +10,14 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content
 
   return (
-    <section className="section section--gradient">
-      <div className="container">
-        <div className="section">
-          <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
-            {title}
-          </h2>
+    <div className="page-wrap">
+      <PageHeader imgPath={ headerImage } titleText={title} />
+      <section className="section section--gradient">
+        <div className="container">
           <PageContent className="content" content={content} />
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   )
 }
 
@@ -34,7 +32,6 @@ const AboutPage = ({ data }) => {
 
   return (
     <Layout>
-      <PageHeader imgPath={ headerImage } titleText="About Us" />
       <AboutPageTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}

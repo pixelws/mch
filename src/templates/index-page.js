@@ -5,6 +5,7 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import ProjectRoll from '../components/ProjectRoll'
 import bg from '../img/bg-home1.jpg'
+import video from '../img/welcome_vid.mp4'
 
 export const IndexPageTemplate = ({
   heading,
@@ -67,8 +68,13 @@ export const IndexPageTemplate = ({
         </div>
       </div>
     </section>
-    <div className="has-text-centered" style={{ marginTop: '-3rem' }}>
-      <div style={{ width: '480px', height: '300px', backgroundColor: '#444', margin: '0 auto' }}></div>
+    <div className="section has-text-centered" style={{ marginTop: '-3rem', paddingTop: '0' }}>
+      <div style={{ maxWidth: '480px', width: '100%', height: 'auto', backgroundColor: '#444', margin: '0 auto' }}>
+        <video width="480" controls>
+          <source src={video} type="video/mp4" />
+          Your browser does not support the videos
+        </video>
+      </div>
     </div>
     <section className="section section-hp">
       <div className="columns">
