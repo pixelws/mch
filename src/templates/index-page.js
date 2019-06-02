@@ -27,7 +27,7 @@ export const IndexPageTemplate = ({
                 >
                 {heading}
                 </h1>
-                <span className="is-size-6-mobile is-size-4-tablet is-size-4-desktop">{subheading}</span>
+                <span className="is-uppercase is-size-6-mobile is-size-4-tablet is-size-4-desktop" style={{ letterSpacing: '2px' }}>{subheading}</span>
             </div>
         </div>
     </div>
