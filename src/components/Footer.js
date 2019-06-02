@@ -23,13 +23,13 @@ const Footer = class extends React.Component {
                 <span className="title is-size-5" style={{ borderBottom: '2px solid #871638', margin: '0.5rem 0.75rem', padding: '0.25rem 0', display: 'inline-block' }}>DISCOVER MCH</span>
                 <ul className="menu-list">
                   <li>
-                    <Link to="/" className="navbar-item has-text-centered-mobile">
-                      Home
+                    <Link className="navbar-item has-text-centered-mobile" to="/about">
+                      About Us
                     </Link>
                   </li>
                   <li>
-                    <Link className="navbar-item has-text-centered-mobile" to="/about">
-                      About Us
+                    <Link to="/bylaws" className="navbar-item has-text-centered-mobile">
+                      Bylaws
                     </Link>
                   </li>
                   <li>
