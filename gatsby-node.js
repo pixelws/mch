@@ -59,3 +59,20 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     })
   }
 }
+
+// Tiny-Slider SSR fix
+
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  if (stage === "build-html") {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /tiny-slider-react/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    })
+  }
+}
