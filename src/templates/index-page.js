@@ -5,8 +5,29 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import DiseaseList from '../components/DiseaseList'
 import ProjectRoll from '../components/ProjectRoll'
-import HomeSlider from '../components/HomeSlider'
+//import HomeSlider from '../components/HomeSlider'
 import video from '../img/welcome_vid.mp4'
+
+import loadingImage from '../img/loading.svg'
+import slide1 from '../img/bg-home1.jpg'
+import slide2 from '../img/bg-home2.jpg'
+
+const slides = [slide1, slide2];
+const sliderSettings = {
+    autoplayButtonOutput: false,
+    lazyload: true,
+    mouseDrag: true,
+    loop: true,
+    items: 1,
+    autoplay: true,
+    nav: true,
+    controls: false,
+};
+const imgStyles = {
+    width: "100%",
+    height: "400px",
+    objectFit: "cover"
+};
 
 export const IndexPageTemplate = ({
   heading,
@@ -22,15 +43,34 @@ export const IndexPageTemplate = ({
             backgroundImage: 'none',
         }}
     >
-      <HomeSlider />
+      <div class="slider">
+          <div style={{ position: "relative" }}>
+              <img
+              className={`tns-lazy-img`}
+              src={loadingImage}
+              data-src={slide1}
+              alt=""
+              style={imgStyles}
+              />
+          </div>
+          <div style={{ position: "relative" }}>
+              <img
+              className={`tns-lazy-img`}
+              src={loadingImage}
+              data-src={slide2}
+              alt=""
+              style={imgStyles}
+              />
+          </div>
+      </div>
       <div className="container" style={{ height: '400px' }}>
           <div className="title-wrap">
-              <h1
-              className="has-text-weight-bold is-size-4-mobile is-size-2-tablet is-size-1-desktop is-family-secondary"
-              >
-              {heading}
-              </h1>
-              <span className="is-uppercase is-size-6-mobile is-size-4-tablet is-size-4-desktop" style={{ letterSpacing: '2px' }}>{subheading}</span>
+            <h1
+            className="has-text-weight-bold is-size-4-mobile is-size-2-tablet is-size-1-desktop is-family-secondary"
+            >
+            {heading}
+            </h1>
+            <span className="is-uppercase is-size-6-mobile is-size-4-tablet is-size-4-desktop" style={{ letterSpacing: '2px' }}>{subheading}</span>
           </div>
       </div>
     </div>
