@@ -5,28 +5,8 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import DiseaseList from '../components/DiseaseList'
 import ProjectRoll from '../components/ProjectRoll'
-import TinySlider from 'tiny-slider-react'
-import loadingImage from '../img/loading.svg'
-import slide1 from '../img/bg-home1.jpg'
-import slide2 from '../img/bg-home2.jpg'
+import HomeSlider from '../components/HomeSlider'
 import video from '../img/welcome_vid.mp4'
-
-const slides = [slide1, slide2];
-const sliderSettings = {
-  autoplayButtonOutput: false,
-  lazyload: true,
-  mouseDrag: true,
-  loop: true,
-  items: 1,
-  autoplay: true,
-  nav: true,
-  controls: false,
-}
-const imgStyles = {
-  width: "100%",
-  height: "400px",
-  objectFit: "cover"
-};
 
 export const IndexPageTemplate = ({
   heading,
@@ -42,19 +22,7 @@ export const IndexPageTemplate = ({
             backgroundImage: 'none',
         }}
     >
-      <TinySlider settings={sliderSettings}>
-        {slides.map((el, index) => (
-          <div key={index} style={{ position: "relative" }}>
-            <img
-              className={`tns-lazy-img`}
-              src={loadingImage}
-              data-src={el}
-              alt=""
-              style={imgStyles}
-            />
-          </div>
-        ))}
-      </TinySlider>
+      <HomeSlider />>
       <div className="container" style={{ height: '400px' }}>
           <div className="title-wrap">
               <h1
