@@ -44,20 +44,16 @@ export const IndexPageTemplate = ({
         }}
     >
       <div class="slider">
-          <div>
-              <img
-              src={slide1}
-              alt=""
-              style={imgStyles}
-              />
-          </div>
-          <div>
-              <img
-              src={slide2}
-              alt=""
-              style={imgStyles}
-              />
-          </div>
+            <img
+            src={slide1}
+            alt=""
+            style={imgStyles}
+            />
+            <img
+            src={slide2}
+            alt=""
+            style={imgStyles}
+            />
       </div>
       <div className="container" style={{ height: '400px' }}>
           <div className="title-wrap">
