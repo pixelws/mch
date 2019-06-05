@@ -12,7 +12,7 @@ import loadingImage from '../img/loading.svg'
 import slide1 from '../img/bg-home1.jpg'
 import slide2 from '../img/bg-home2.jpg'
 
-const slides = [slide1, slide2];
+//const slides = [slide1, slide2];
 const sliderSettings = {
     autoplayButtonOutput: false,
     lazyload: true,
@@ -21,7 +21,7 @@ const sliderSettings = {
     items: 1,
     autoplay: true,
     nav: true,
-    controls: false,
+    controls: false
 };
 const imgStyles = {
     width: "100%",
@@ -44,20 +44,16 @@ export const IndexPageTemplate = ({
         }}
     >
       <div class="slider">
-          <div style={{ position: "relative" }}>
+          <div>
               <img
-              className={`tns-lazy-img`}
-              src={loadingImage}
-              data-src={slide1}
+              src={slide1}
               alt=""
               style={imgStyles}
               />
           </div>
-          <div style={{ position: "relative" }}>
+          <div>
               <img
-              className={`tns-lazy-img`}
-              src={loadingImage}
-              data-src={slide2}
+              src={slide2}
               alt=""
               style={imgStyles}
               />
