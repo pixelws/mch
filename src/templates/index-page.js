@@ -22,7 +22,7 @@ export const IndexPageTemplate = ({
             backgroundImage: 'none',
         }}
     >
-      <HomeSlider />>
+      <HomeSlider />
       <div className="container" style={{ height: '400px' }}>
           <div className="title-wrap">
               <h1
