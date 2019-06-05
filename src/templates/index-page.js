@@ -44,6 +44,7 @@ export const IndexPageTemplate = ({
         }}
     >
       <div className="slider">
+        <div className="controls"></div>
         <div className="item">
           <img
           src={slide1}
