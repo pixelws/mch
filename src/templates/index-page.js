@@ -5,8 +5,28 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import DiseaseList from '../components/DiseaseList'
 import ProjectRoll from '../components/ProjectRoll'
-import bg from '../img/bg-home1.jpg'
+import TinySlider from 'tiny-slider-react'
+import loadingImage from '../img/loading.svg'
+import slide1 from '../img/bg-home1.jpg'
+import slide2 from '../img/bg-home2.jpg'
 import video from '../img/welcome_vid.mp4'
+
+const slides = [slide1, slide2];
+const sliderSettings = {
+  autoplayButtonOutput: false,
+  lazyload: true,
+  mouseDrag: true,
+  loop: true,
+  items: 1,
+  autoplay: true,
+  nav: true,
+  controls: false,
+}
+const imgStyles = {
+  width: "100%",
+  height: "400px",
+  objectFit: "cover"
+};
 
 export const IndexPageTemplate = ({
   heading,
@@ -19,19 +39,32 @@ export const IndexPageTemplate = ({
     <div
         className="pg-head margin-top-0"
         style={{
-            backgroundImage: 'url(' + bg + ')',
+            backgroundImage: 'none',
         }}
     >
-        <div className="container" style={{ height: '400px' }}>
-            <div className="title-wrap">
-                <h1
-                className="has-text-weight-bold is-size-4-mobile is-size-2-tablet is-size-1-desktop is-family-secondary"
-                >
-                {heading}
-                </h1>
-                <span className="is-uppercase is-size-6-mobile is-size-4-tablet is-size-4-desktop" style={{ letterSpacing: '2px' }}>{subheading}</span>
-            </div>
-        </div>
+      <TinySlider settings={sliderSettings}>
+        {slides.map((el, index) => (
+          <div key={index} style={{ position: "relative" }}>
+            <img
+              className={`tns-lazy-img`}
+              src={loadingImage}
+              data-src={el}
+              alt=""
+              style={imgStyles}
+            />
+          </div>
+        ))}
+      </TinySlider>
+      <div className="container" style={{ height: '400px' }}>
+          <div className="title-wrap">
+              <h1
+              className="has-text-weight-bold is-size-4-mobile is-size-2-tablet is-size-1-desktop is-family-secondary"
+              >
+              {heading}
+              </h1>
+              <span className="is-uppercase is-size-6-mobile is-size-4-tablet is-size-4-desktop" style={{ letterSpacing: '2px' }}>{subheading}</span>
+          </div>
+      </div>
     </div>
 
     <section className="section has-background-primary has-text-white">
@@ -51,12 +84,7 @@ export const IndexPageTemplate = ({
         <div className="column is-10 is-offset-1">
           <div className="content">
             <h2 className="title has-text-centered">{medicalConditions.heading}</h2>
-            <div className="columns">
-              <div className="column is-5">Image</div>
-              <div className="column is-7">
-                <DiseaseList data={medicalConditions.diseases} />
-              </div>
-            </div>
+            <DiseaseList data={medicalConditions.diseases} />
           </div>
         </div>
       </div>
@@ -70,11 +98,11 @@ export const IndexPageTemplate = ({
         </div>
       </div>
     </section>
-    <div className="section has-text-centered" style={{ marginTop: '-3rem', paddingTop: '0' }}>
-      <div style={{ maxWidth: '480px', width: '100%', height: 'auto', backgroundColor: '#444', margin: '0 auto' }}>
-        <video width="480" controls>
+    <div className="section has-text-centered" style={{ padding: '0 1rem 4rem', backgroundColor: '#f3f3f3' }}>
+      <div style={{ maxWidth: '480px', width: '100%', height: 'auto', margin: '0 auto' }}>
+        <video width="100%" controls style={{ marginTop: '-3rem' }}>
           <source src={video} type="video/mp4" />
-          Your browser does not support the videos
+          Your browser does not support videos
         </video>
       </div>
     </div>

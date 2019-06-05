@@ -222,6 +222,7 @@ footer.footer
     height: 60px
     width: auto
 
+
 // ===== Component Styles =====
 // Page Header
 .pg-head
@@ -268,8 +269,7 @@ footer.footer
       position: relative
 .home-page-wrap
   .pg-head::before
-    background: linear-gradient(to bottom right, lighten($secondary, 30%) 30%, $secondary)
-    opacity: .5
+    background: none
   .title-wrap::before
     background-color: rgba($secondary, 0.9)
 
@@ -307,3 +307,27 @@ footer.footer
     width: auto
     height: 40px
 
+// ========================= Page Custom Styles =============================
+
+// Home Page
+ul.disease-list
+  list-style: none
+  width: 100%
+  max-width: 600px
+  margin: 1rem auto
+  li
+    padding: 0.5rem 0 0.5rem 2rem
+    position: relative
+    line-height: 25px
+    &::before
+      content: ''
+      position: absolute
+      top: 0.5rem
+      left: 0
+      height: 25px
+      width: 25px
+      display: inline-block
+      background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDUwIDUwIj4NCjxwb2x5Z29uIGZpbGw9IiM4NzE2MzgiIHBvaW50cz0iMTkuODMzLDQ4LjE2MyAxLjQ4MiwyNi41ODUgNy41NzYsMjEuNDAyIDE5LjE1MywzNS4wMTUgNDEuOTIyLDEuODM3IDQ4LjUxOCw2LjM2MyAiLz4NCjwvc3ZnPg0K')
+      background-size: cover
+      vertical-align: middle
+      margin-right: 10px
