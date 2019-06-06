@@ -8,7 +8,7 @@ import ProjectRoll from '../components/ProjectRoll'
 //import HomeSlider from '../components/HomeSlider'
 import video from '../img/welcome_vid.mp4'
 
-import loadingImage from '../img/loading.svg'
+//import loadingImage from '../img/loading.svg'
 import slide1 from '../img/bg-home1.jpg'
 import slide2 from '../img/bg-home2.jpg'
 
