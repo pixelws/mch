@@ -20,7 +20,7 @@ export const IndexPageTemplate = ({
     <div
         className="pg-head margin-top-0"
         style={{
-            backgroundImage: slide1,
+            backgroundImage: slide1
         }}
     >
       <div className="container" style={{ height: '400px' }}>
