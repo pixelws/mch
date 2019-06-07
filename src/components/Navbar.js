@@ -77,9 +77,9 @@ const Navbar = class extends React.Component {
               <Link className="navbar-item" to="/contact/membership">
                 Membership
               </Link>
-              <Link className="navbar-item" to="/donate">
+              <a className="navbar-item" href="https://mastcellhope.kindful.com/" target="_blank" rel="noopener noreferrer">
                 <button className="button is-secondary is-outlined">Donate</button>
-              </Link>
+              </a>
             </div>
           </div>
         </div>

@@ -4,7 +4,7 @@ export default props => (
     <div
         className="pg-head margin-top-0"
         style={{
-            backgroundImage: 'url(' + props.imgPath + ')',
+            backgroundImage: 'url(' + props.bgImage + ')',
         }}
     >
         <div className="container">

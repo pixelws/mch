@@ -28,7 +28,7 @@ const BylawsPage = ({ data }) => {
 
   return (
     <Layout>
-      <PageHeader imgPath="/img/bg-bylaws.jpg" titleText="BYLAWS" />
+      <PageHeader bgImage="/img/bg-bylaws.jpg" titleText="BYLAWS" />
       <BylawsPageTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}

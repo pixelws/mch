@@ -11,7 +11,7 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
 
   return (
     <div className="page-wrap">
-      <PageHeader imgPath={ headerImage } titleText={title} />
+      <PageHeader bgImage={ headerImage } titleText={title} />
       <section className="section section--gradient">
         <div className="container">
           <PageContent className="content" content={content} />
