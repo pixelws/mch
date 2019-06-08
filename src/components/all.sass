@@ -31,7 +31,7 @@ $link-active: $secondary
 $link-active-border: transparent
 
 // Buttons
-$button-color: #fff
+$button-color: $secondary
 $button-background-color: transparent
 $button-border-color: $secondary
 $button-border-width: 2px
@@ -90,16 +90,14 @@ $input-shadow: 0 1px 5px rgba($black, 0.2)
 $input-placeholder-color: rgba($input-color, 0.3)
 
 $input-hover-box-shadow: 0 2px 7px rgba(0,0,0,.3);
-$input-hover-color: $grey-darker
 $input-hover-border-color: transparent
 
 $input-focus-background-color: $white
-$input-focus-color: $grey-darker
 $input-focus-border-color: transparent
 $input-focus-box-shadow-size: 0 1px 8px
-$input-focus-box-shadow-color: rgba($primary, 0.3)
+$input-focus-box-shadow-color: rgba($link, 0.6)
 
-$input-disabled-color: $text-light
+$input-disabled-color: lighten($input-color, 10%)
 $input-disabled-background-color: #eee
 $input-disabled-border-color: transparent
 $input-disabled-placeholder-color: rgba($input-disabled-color, 0.5)
@@ -120,15 +118,13 @@ $file-cta-hover-color: $white
 $file-cta-hover-background-color: $file-border-color
 $file-cta-active-color: $white
 
-$file-name-border-color: $border
+$file-name-border-color: #ddd
 $file-name-border-style: solid
 $file-name-border-width: 1px 1px 1px 0
 $file-name-max-width: 16em
 
 $label-color: $grey-darker
 $label-weight: $weight-normal
-
-$help-size: $size-small
 
 // Miscellaneous
 $radius: 0

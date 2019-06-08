@@ -60,7 +60,19 @@ const Footer = class extends React.Component {
                 </ul>
               </div>
               <div className="column is-4">
-
+                <span className="title is-size-5" style={{ borderBottom: '2px solid #871638', margin: '0.5rem 0.75rem', padding: '0.25rem 0', display: 'inline-block' }}>STAY CONNECTED</span>
+                <ul className="menu-list">
+                  <li>
+                    <a className="navbar-item has-text-centered-mobile" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer nofollow">
+                      Facebook
+                    </a>
+                  </li>
+                  <li>
+                    <Link className="navbar-item has-text-centered-mobile" to="/contact">
+                      Contact Us
+                    </Link>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
