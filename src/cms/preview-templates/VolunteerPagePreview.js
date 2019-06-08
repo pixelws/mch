@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { VolunteerPageTemplate } from '../../templates/volunteer-page'
 
 const VolunteerPagePreview = ({ entry, getAsset }) => {
-  const entryImage = entry.getIn(['data', 'main', 'image']).toJS()
+  const mainImage = entry.getIn(['data', 'main', 'image'])
 
   const entryOpenPos = entry.getIn(['data', 'volunteerList', 'positions'])
   const openPos = entryOpenPos ? entryOpenPos.toJS() : []
@@ -17,7 +17,7 @@ const VolunteerPagePreview = ({ entry, getAsset }) => {
         text: entry.getIn(['data', 'intro', 'text']),
       }}
       main={{
-        image: getAsset(entryImage),
+        image: getAsset(mainImage),
         content: entry.getIn(['data', 'main', 'content']),
       }}
       volunteerList={{
