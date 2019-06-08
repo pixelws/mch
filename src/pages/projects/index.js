@@ -9,7 +9,7 @@ export default class ProjectIndexPage extends React.Component {
   render() {
     return (
       <Layout>
-        <PageHeader imgPath={ headerImage } titleText="Research Projects" />
+        <PageHeader bgImage={ headerImage } titleText="Research Projects" />
         <section className="section">
           <div className="container">
             <div className="content">
