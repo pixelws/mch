@@ -32,11 +32,11 @@ $link-active-border: transparent
 
 // Buttons
 $button-color: #fff
-$button-background-color: $secondary
+$button-background-color: transparent
 $button-border-color: $secondary
 $button-border-width: 2px
-$button-hover-color: $secondary
-$button-hover-background-color: transparent
+$button-hover-color: $white
+$button-hover-background-color: $secondary
 $button-hover-border-color: $secondary
 
 $button-focus-color: $white
@@ -79,6 +79,56 @@ $content-heading-weight: 700
 $content-heading-line-height: 1.25
 
 $family-secondary: 'Aleo', sans-serif
+
+// Forms
+$input-color: $grey-darker
+$input-background-color: #f9f9f9
+$input-border-color: transparent
+$input-border-width: 0
+$input-height: $control-height
+$input-shadow: 0 1px 5px rgba($black, 0.2)
+$input-placeholder-color: rgba($input-color, 0.3)
+
+$input-hover-box-shadow: 0 2px 7px rgba(0,0,0,.3);
+$input-hover-color: $grey-darker
+$input-hover-border-color: transparent
+
+$input-focus-background-color: $white
+$input-focus-color: $grey-darker
+$input-focus-border-color: transparent
+$input-focus-box-shadow-size: 0 1px 8px
+$input-focus-box-shadow-color: rgba($primary, 0.3)
+
+$input-disabled-color: $text-light
+$input-disabled-background-color: #eee
+$input-disabled-border-color: transparent
+$input-disabled-placeholder-color: rgba($input-disabled-color, 0.5)
+
+$input-arrow: $primary
+
+$input-icon-color: $grey-lighter
+$input-icon-active-color: $grey
+
+$input-radius: $radius
+
+$file-border-color: $secondary
+$file-radius: 0
+
+$file-cta-background-color: $white
+$file-cta-color: $file-border-color
+$file-cta-hover-color: $white
+$file-cta-hover-background-color: $file-border-color
+$file-cta-active-color: $white
+
+$file-name-border-color: $border
+$file-name-border-style: solid
+$file-name-border-width: 1px 1px 1px 0
+$file-name-max-width: 16em
+
+$label-color: $grey-darker
+$label-weight: $weight-normal
+
+$help-size: $size-small
 
 // Miscellaneous
 $radius: 0
@@ -232,7 +282,7 @@ footer.footer
   overflow: hidden
   background-size: cover
   background-repeat: no-repeat
-  background-position: top center
+  background-position: center
   &::before
     content: ''
     display: block

@@ -6,11 +6,11 @@ title: Become a Volunteer
 intro:
   heading: HELP OUR CAUSE!
   text: >
-    A successful non profit can only exist with great volunteers. At Mast Cell Hope we work cooperatively and with respect for eachother. We welcome all members who are patients, caregivers, family members, friends and medical professionals as volunteers.
+    A successful non profit can only exist with great volunteers. At Mast Cell Hope we work cooperatively and with respect for each other. We welcome all members who are patients, caregivers, family members, friends and medical professionals as volunteers.
 main:
-  content: >
-    If you are interested in volunteering please send us a short bio about yourself and what volunteer job you are interested in. Email us at volunteer@mastcellhope.org , you will receive a follow up call for an interview.
   image: /img/volunteer.png
+  content: >
+    If you are interested in volunteering please send us a short bio about yourself and what volunteer job you are interested in. Email us at volunteer@mastcellhope.org, you will receive a follow up call for an interview.
 volunteerList:
   heading: Open Positions
   positions:
