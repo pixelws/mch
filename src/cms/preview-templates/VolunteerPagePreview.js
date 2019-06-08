@@ -4,6 +4,8 @@ import { VolunteerPageTemplate } from '../../templates/volunteer-page'
 
 const VolunteerPagePreview = ({ entry, getAsset }) => {
   const data = entry.getIn(['data']).toJS()
+  const entryOpenPos = entry.getIn(['data', 'volunteerList', 'positions'])
+  const openPos = entryOpenPos ? entryOpenPos.toJS() : []
 
   if (data) {
     return (
@@ -16,11 +18,11 @@ const VolunteerPagePreview = ({ entry, getAsset }) => {
         }}
         main={{
           content: entry.getIn(['data', 'main', 'content']),
-          image: entry.getIn(['data', 'main', 'image']),
+          image: getAsset(entry.getIn(['data', 'main', 'image'])),
         }}
         volunteerList={{
           heading: entry.getIn(['data', 'volunteerList', 'heading']),
-          positions: entry.getIn(['data', 'volunteerList', 'positions']),
+          positions: openPos,
         }}
       />
     )

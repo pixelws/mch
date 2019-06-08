@@ -2,7 +2,7 @@
 templateKey: education-page
 title: Education
 intro:
-  heading: IMPROVING LIVES BY SPREADING KNOWLEDGE
+  heading: IMPROVING LIVES THROUGH AWARENESS
   text: >
     It is our aim to share knowledge of mast cell diseases with healthcare professionals and spread awareness to all medical fields.  Having knowledgable staff leads to better patient care.
 ---

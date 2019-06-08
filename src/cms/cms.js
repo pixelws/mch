@@ -8,6 +8,7 @@ import ProjectPreview from './preview-templates/ProjectPreview'
 import ProductPagePreview from './preview-templates/ProductPagePreview'
 import IndexPagePreview from './preview-templates/IndexPagePreview'
 import VolunteerPagePreview from './preview-templates/VolunteerPagePreview'
+import EducationPagePreview from './preview-templates/EducationPagePreview'
 
 
 //CMS.registerMediaLibrary(uploadcare);
@@ -19,3 +20,4 @@ CMS.registerPreviewTemplate('bylaws', BylawsPagePreview)
 CMS.registerPreviewTemplate('products', ProductPagePreview)
 CMS.registerPreviewTemplate('project', ProjectPreview)
 CMS.registerPreviewTemplate('volunteer', VolunteerPagePreview)
+CMS.registerPreviewTemplate('education', EducationPagePreview)
