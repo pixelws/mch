@@ -4,14 +4,18 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import PageHeader from '../components/PageHeader'
 import Content, { HTMLContent } from '../components/Content'
+import headerImage from '../img/bg-bylaws.jpg'
 
 export const BylawsPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content
 
   return (
-    <div className="container">
-      <div className="section">
-        <PageContent className="content" content={content} />
+    <div className="page-wrap">
+      <PageHeader bgImage={ headerImage } titleText={title} />
+      <div className="container">
+        <div className="section">
+          <PageContent className="content" content={content} />
+        </div>
       </div>
     </div>
   )
@@ -28,7 +32,6 @@ const BylawsPage = ({ data }) => {
 
   return (
     <Layout>
-      <PageHeader bgImage="/img/bg-bylaws.jpg" titleText="BYLAWS" />
       <BylawsPageTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}

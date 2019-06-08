@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import PageHeader from '../components/PageHeader'
-import DiseaseList from '../components/DiseaseList'
+import CheckList from '../components/CheckList'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
 export const VolunteerPageTemplate = ({
@@ -40,7 +40,7 @@ export const VolunteerPageTemplate = ({
             <div className="column is-10 is-offset-1">
                 <div className="content">
                     <h2 className="title has-text-centered">{volunteerList.heading}</h2>
-                    <DiseaseList data={volunteerList.positions} />
+                    <CheckList data={volunteerList.positions} />
                 </div>
             </div>
         </div>
@@ -111,7 +111,7 @@ query VolunteerPageTemplate {
                 content
                 image {
                     childImageSharp {
-                        fluid(maxWidth: 400, quality: 92) {
+                        fluid(maxWidth: 1024, quality: 92) {
                             ...GatsbyImageSharpFluid
                         }
                     }

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
-import DiseaseList from '../components/DiseaseList'
+import CheckList from '../components/CheckList'
 import ProjectRoll from '../components/ProjectRoll'
 import video from '../img/welcome_vid.mp4'
 
@@ -52,7 +52,7 @@ export const IndexPageTemplate = ({
         <div className="column is-10 is-offset-1">
           <div className="content">
             <h2 className="title has-text-centered">{medicalConditions.heading}</h2>
-            <DiseaseList data={medicalConditions.diseases} />
+            <CheckList data={medicalConditions.diseases} />
           </div>
         </div>
       </div>

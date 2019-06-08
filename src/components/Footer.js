@@ -14,7 +14,7 @@ const Footer = class extends React.Component {
                 <Logo format="mono" color="#363636" />
               </div>
               <div className="column is-6 has-text-centered-mobile has-text-right">
-                <a href="https://mastcellhope.kindful.com/" target="_blank" rel="noopener noreferrer" className="button is-secondary is-outlined is-large">DONATE</a>
+                <a href="https://mastcellhope.kindful.com/" target="_blank" rel="noopener noreferrer nofollow" className="button is-secondary is-outlined is-large">DONATE</a>
               </div>
             </div>
 

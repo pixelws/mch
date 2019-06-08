@@ -291,8 +291,31 @@ footer.footer
   margin: auto
   max-height: 130px
 
+// Checklist
+ul.check-list
+  list-style: none
+  width: 100%
+  max-width: 600px
+  margin: 1rem auto
+  li
+    padding: 0.5rem 0 0.5rem 2.25rem
+    position: relative
+    font-size: 1.125rem
+    line-height: 25px
+    &::before
+      content: ''
+      position: absolute
+      top: 0.5rem
+      left: 0
+      height: 25px
+      width: 25px
+      display: inline-block
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 50'%3E%3Cpolygon fill='%23871638' points='19.833,48.163 1.482,26.585 7.576,21.402 19.153,35.015 41.922,1.837 48.518,6.363 '/%3E%3C/svg%3E")
+      background-size: cover
+      vertical-align: middle
+      margin-right: 10px
 
-// =========================== Responsiveness
+// =========================== Responsiveness ===========================
 +tablet-only
   .project-item .featured-thumbnail
     flex-basis: 50%
@@ -311,25 +334,3 @@ footer.footer
 // ========================= Page Custom Styles =============================
 
 // Home Page
-ul.disease-list
-  list-style: none
-  width: 100%
-  max-width: 600px
-  margin: 1rem auto
-  li
-    padding: 0.5rem 0 0.5rem 2.25rem
-    position: relative
-    font-size: 1.125rem
-    line-height: 25px
-    &::before
-      content: ''
-      position: absolute
-      top: 0.5rem
-      left: 0
-      height: 25px
-      width: 25px
-      display: inline-block
-      background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDUwIDUwIj4NCjxwb2x5Z29uIGZpbGw9IiM4NzE2MzgiIHBvaW50cz0iMTkuODMzLDQ4LjE2MyAxLjQ4MiwyNi41ODUgNy41NzYsMjEuNDAyIDE5LjE1MywzNS4wMTUgNDEuOTIyLDEuODM3IDQ4LjUxOCw2LjM2MyAiLz4NCjwvc3ZnPg0K')
-      background-size: cover
-      vertical-align: middle
-      margin-right: 10px

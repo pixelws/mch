@@ -10,7 +10,7 @@ intro:
 main:
   content: >
     If you are interested in volunteering please send us a short bio about yourself and what volunteer job you are interested in. Email us at volunteer@mastcellhope.org , you will receive a follow up call for an interview.
-  image: /img/volunteer1.png
+  image: /img/volunteer.png
 volunteerList:
   heading: Open Positions
   positions:

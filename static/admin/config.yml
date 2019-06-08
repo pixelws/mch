@@ -56,7 +56,7 @@ collections:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Intro", name: "intro", widget: "object", fields: [{label: "Heading", name: "heading", widget: "string"}, {label: "Content", name: "text", widget: "text"}]}
           - {label: "Main Content", name: "main", widget: "object", fields: [{label: "Content", name: "content", widget: "text"}, {label: "Image", name: "image", widget: "image"}]}
-          - {label: "Volunteer Positions", name: "volunteerList", widget: "object", fields: [{label: "Heading", name: "heading", widget: "string"}, {label: "Positions", name: "positions", widget: "list", fields: [{label: "Name", name: "name", widget: "string"} {label: "Description", name: "description", widget: "string"}]}]}
+          - {label: "Volunteer Positions", name: "volunteerList", widget: "object", fields: [{label: "Heading", name: "heading", widget: "string"}, {label: "Positions", name: "positions", widget: "list", fields: [{label: "Name", name: "name", widget: "string"}, {label: "Description", name: "description", widget: "string"}]}]}
       - file: "src/pages/products/index.md"
         label: "Products Page"
         name: "products"
