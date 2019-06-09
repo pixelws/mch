@@ -35,20 +35,22 @@ export const VolunteerPageTemplate = ({
         </section>
         <section className="section">
             <div className="container">
-                <div className="content">
+                <div className="content" style={{ maxWidth: '960px', margin: '0 auto' }}>
                     <PreviewCompatibleImage imageInfo={mainImage} />
                 </div>
             </div>
         </section>
         <section className="section">
-            <div className="columns">
-                <div className="column is-6">
-                    <PageContent className="content" content={content} />
-                </div>
-                <div className="column is-6">
-                    <div className="content">
-                        <h2 className="title has-text-centered">{volunteerList.heading}</h2>
-                        <CheckList data={volunteerList.positions} />
+            <div className="container">
+                <div className="columns">
+                    <div className="column is-6">
+                        <PageContent className="content" content={content} />
+                    </div>
+                    <div className="column is-6">
+                        <div className="content">
+                            <h2 className="title has-text-centered">{volunteerList.heading}</h2>
+                            <CheckList data={volunteerList.positions} />
+                        </div>
                     </div>
                 </div>
             </div>
