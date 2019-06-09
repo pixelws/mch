@@ -63,7 +63,7 @@ const Footer = class extends React.Component {
                 <span className="title is-size-5" style={{ borderBottom: '2px solid #871638', margin: '0.5rem 0.75rem', padding: '0.25rem 0', display: 'inline-block' }}>STAY CONNECTED</span>
                 <ul className="menu-list">
                   <li>
-                    <a className="navbar-item has-text-centered-mobile" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer nofollow">
+                    <a className="navbar-item has-text-centered-mobile" href="https://www.facebook.com/Mast-Cell-Hope-Inc-442028806534119" target="_blank" rel="noopener noreferrer nofollow">
                       Facebook
                     </a>
                   </li>

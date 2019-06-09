@@ -2,9 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { VolunteerPageTemplate } from '../../templates/volunteer-page'
 
-const VolunteerPagePreview = ({ entry, getAsset }) => {
-  const mainImage = entry.getIn(['data', 'main', 'image'])
-
+const VolunteerPagePreview = ({ entry, widgetFor }) => {
   const entryOpenPos = entry.getIn(['data', 'volunteerList', 'positions'])
   const openPos = entryOpenPos ? entryOpenPos.toJS() : []
 
@@ -16,14 +14,12 @@ const VolunteerPagePreview = ({ entry, getAsset }) => {
         heading: entry.getIn(['data', 'intro', 'heading']),
         text: entry.getIn(['data', 'intro', 'text']),
       }}
-      main={{
-        image: getAsset(mainImage),
-        content: entry.getIn(['data', 'main', 'content']),
-      }}
+      mainImage={entry.getIn(['data', 'mainImage'])}
       volunteerList={{
         heading: entry.getIn(['data', 'volunteerList', 'heading']),
         positions: openPos,
       }}
+      content={widgetFor('body')}
     />
   )
 }
@@ -32,7 +28,7 @@ VolunteerPagePreview.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func,
   }),
-  getAsset: PropTypes.func,
+  widgetFor: PropTypes.func,
 }
 
 export default VolunteerPagePreview
