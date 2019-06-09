@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-netlify-cms",
-  "description": "Example Gatsby, and Netlify CMS project",
-  "version": "1.1.3",
-  "author": "Austin Green",
+  "name": "mast-cell-hope-site",
+  "description": "Default template for Mast Cell Hope Inc",
+  "version": "1.0.0",
+  "author": "Pixel Workshop LLC",
   "dependencies": {
     "bulma": "^0.7.0",
     "gatsby": "^2.1.34",
