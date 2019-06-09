@@ -59,7 +59,7 @@ const Footer = class extends React.Component {
                   </li>
                 </ul>
               </div>
-              <div className="column is-4">
+              <div className="column is-4 has-text-centered-mobile">
                 <span className="title is-size-5" style={{ borderBottom: '2px solid #871638', margin: '0.5rem 0.75rem', padding: '0.25rem 0', display: 'inline-block' }}>STAY CONNECTED</span>
                 <ul className="menu-list">
                   <li>

@@ -20,5 +20,5 @@ volunteerList:
     - name: Treasurer (will include a background check)
     - name: Secretary
 ---
-#### We're always looking for energetic volunteers to join our team.
+### We're always looking for energetic volunteers to join our team.
 If you are interested in volunteering please send us a short bio about yourself and what volunteer job you are interested in to [&#118;&#111;&#108;&#117;&#110;&#116;&#101;&#101;&#114;&#064;&#109;&#097;&#115;&#116;&#099;&#101;&#108;&#108;&#104;&#111;&#112;&#101;&#046;&#111;&#114;&#103;](mailto:&#118;&#111;&#108;&#117;&#110;&#116;&#101;&#101;&#114;&#064;&#109;&#097;&#115;&#116;&#099;&#101;&#108;&#108;&#104;&#111;&#112;&#101;&#046;&#111;&#114;&#103;). You will receive a follow up call for an interview.

@@ -47,7 +47,7 @@ export const VolunteerPageTemplate = ({
                         <PageContent className="content" content={content} />
                     </div>
                     <div className="column is-6">
-                        <div className="content">
+                        <div className="content" style={{ paddingLeft: '2rem' }}>
                             <h2 className="title has-text-centered-mobile">{volunteerList.heading}</h2>
                             <CheckList data={volunteerList.positions} />
                         </div>
