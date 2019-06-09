@@ -5,48 +5,57 @@ import Layout from '../components/Layout'
 import PageHeader from '../components/PageHeader'
 import CheckList from '../components/CheckList'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
+import Content, { HTMLContent } from '../components/Content'
 
 export const VolunteerPageTemplate = ({
     image,
     title,
     intro,
-    main,
+    mainImage,
     volunteerList,
-}) => (
-<div className="page-wrap">
-    <PageHeader bgImage={ !!image.childImageSharp ? image.childImageSharp.fluid.src : image } titleText={title} />
-    <section className="section has-background-primary has-text-white">
-        <div className="container">
-            <div className="columns">
-                <div className="column is-10 is-offset-1">
-                    <div className="content">
-                    <h2 className="title has-text-centered has-text-white is-uppercase is-size-3 is-size-4-tablet is-size-5-mobile">{intro.heading}</h2>
-                    <span className="is-size-6-mobile is-size-5">{intro.text}</span>
+    content,
+    contentComponent,
+}) => {
+    const PageContent = contentComponent || Content
+
+    return(
+    <div className="page-wrap">
+        <PageHeader bgImage={ !!image.childImageSharp ? image.childImageSharp.fluid.src : image } titleText={title} />
+        <section className="section has-background-primary has-text-white">
+            <div className="container">
+                <div className="columns">
+                    <div className="column is-10 is-offset-1">
+                        <div className="content">
+                        <h2 className="title has-text-centered has-text-white is-uppercase is-size-3 is-size-4-tablet is-size-5-mobile">{intro.heading}</h2>
+                        <span className="is-size-6-mobile is-size-5">{intro.text}</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <section className="section">
-        <div className="container">
-            <div className="content">
-                <PreviewCompatibleImage imageInfo={main.image} />
-                <p>{main.content}</p>
-            </div>
-        </div>
-    </section>
-    <section className="section">
-        <div className="columns">
-            <div className="column is-10 is-offset-1">
+        </section>
+        <section className="section">
+            <div className="container">
                 <div className="content">
-                    <h2 className="title has-text-centered">{volunteerList.heading}</h2>
-                    <CheckList data={volunteerList.positions} />
+                    <PreviewCompatibleImage imageInfo={mainImage} />
                 </div>
             </div>
-        </div>
-    </section>
-</div>
-)
+        </section>
+        <section className="section">
+            <div className="columns">
+                <div className="column is-6">
+                    <PageContent className="content" content={content} />
+                </div>
+                <div className="column is-6">
+                    <div className="content">
+                        <h2 className="title has-text-centered">{volunteerList.heading}</h2>
+                        <CheckList data={volunteerList.positions} />
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    )
+}
 
 VolunteerPageTemplate.propTypes = {
     image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
@@ -55,27 +64,28 @@ VolunteerPageTemplate.propTypes = {
         heading: PropTypes.string,
         text: PropTypes.string,
     }),
-    main: PropTypes.shape({
-        content: PropTypes.string,
-        image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-    }),
+    mainImage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
     volunteerList: PropTypes.shape({
         heading: PropTypes.string,
         positions: PropTypes.array,
     }),
+    content: PropTypes.string,
+    contentComponent: PropTypes.func,
 }
 
 const VolunteerPage = ({ data }) => {
-    const { frontmatter } = data.markdownRemark
+    const { markdownRemark: post } = data
 
     return (
         <Layout>
             <VolunteerPageTemplate
-                image={frontmatter.image}
-                title={frontmatter.title}
-                intro={frontmatter.intro}
-                main={frontmatter.main}
-                volunteerList={frontmatter.volunteerList}
+                contentComponent={HTMLContent}
+                image={post.frontmatter.image}
+                title={post.frontmatter.title}
+                intro={post.frontmatter.intro}
+                mainImage={post.frontmatter.mainImage}
+                volunteerList={post.frontmatter.volunteerList}
+                content={post.html}
             />
         </Layout>
     )
@@ -84,16 +94,17 @@ const VolunteerPage = ({ data }) => {
 VolunteerPage.propTypes = {
     data: PropTypes.shape({
         markdownRemark: PropTypes.shape({
-        frontmatter: PropTypes.object,
+            frontmatter: PropTypes.object,
         }),
     }),
 }
 
 export default VolunteerPage
 
-export const pageQuery = graphql`
-query VolunteerPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "volunteer-page" } }) {
+export const VolunteerPageQuery = graphql`
+query VolunteerPage($id: String!) {
+    markdownRemark(id: { eq: $id }) {
+        html
         frontmatter {
             image {
                 childImageSharp {
@@ -107,13 +118,10 @@ query VolunteerPageTemplate {
                 heading
                 text
             }
-            main {
-                content
-                image {
-                    childImageSharp {
-                        fluid(maxWidth: 1024, quality: 92) {
-                            ...GatsbyImageSharpFluid
-                        }
+            mainImage {
+                childImageSharp {
+                    fluid(maxWidth: 1024, quality: 92) {
+                        ...GatsbyImageSharpFluid
                     }
                 }
             }
