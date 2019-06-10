@@ -3,6 +3,10 @@ import { Link } from 'gatsby'
 
 import Logo from '../components/Logo'
 
+const donateScript = `
+  <a class='button is-secondary is-outlined is-large' id='kindful-donate-btn-7dfa78e2-1923-4988-a2a0-6df2e32ff687'>DONATE</a>
+  <script src='https://mastcellhope.kindful.com/embeds/7dfa78e2-1923-4988-a2a0-6df2e32ff687/init.js' data-embed-id='7dfa78e2-1923-4988-a2a0-6df2e32ff687' data-lookup-type='jquery-selector' data-lookup-value='#kindful-donate-btn-7dfa78e2-1923-4988-a2a0-6df2e32ff687'></script>
+  `
 const Footer = class extends React.Component {
   render() {
     return (
@@ -13,8 +17,7 @@ const Footer = class extends React.Component {
               <div className="column is-6 has-text-centered-mobile">
                 <Logo format="mono" color="#363636" />
               </div>
-              <div className="column is-6 has-text-centered-mobile has-text-right">
-                <a href="https://mastcellhope.kindful.com/" target="_blank" rel="noopener noreferrer nofollow" className="button is-secondary is-outlined is-large">DONATE</a>
+              <div className="column is-6 has-text-centered-mobile has-text-right" dangerouslySetInnerHTML={{ __html: donateScript }}>
               </div>
             </div>
 
